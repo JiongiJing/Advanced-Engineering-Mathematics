@@ -1,0 +1,327 @@
+\documentclass[12pt, letterpaper, onecolumn]{article}
+\usepackage{mathrsfs,amssymb,amsmath, amsfonts,amsthm}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{multirow}
+\interdisplaylinepenalty = 2500  %Enable automatically break with multi-line equations
+\usepackage{cases}
+\usepackage{enumitem}
+\usepackage[margin=1.9cm]{geometry}
+\usepackage{ctex}
+\usepackage{bm}
+\setlength{\parindent}{0pt}
+
+\renewcommand{\proofname}{\indent\bf Proof:}
+
+\begin{document}
+
+	\begin{center}
+		\large \textbf{Solution to Exercises-1 }
+	\end{center}
+	\vspace{0.3cm}
+	\textbf{Course}: Matrix Analysis and Applications \\
+	\textbf{Instructor}: Minghua Xia \\
+
+	\textit{I hereby certify that all the work in these exercises is mine alone. 
+	I have neither received assistance from another person or group, 
+	nor have I given assistance to another person.} \\
+
+	\textbf{Name}: \underline{\makebox[5em]{梁炯}} 
+	\textbf{Student ID}: \underline{\makebox[5em]{24215896}} 
+	\textbf{Signature}: \underline{\makebox[5em]{}} 
+	\textbf{Date}: \underline{\today} 
+
+	\begin{enumerate}[start=2]
+		\item{
+			For each of the subsets below, verify whether it is a subspace.%第2题
+			\begin{enumerate}%分小题
+				\item %(a)小题
+				$\mathbb{V}_{1} \cap \mathbb{V}_{2}$, where 
+				$\mathbb{V}_{1}=\{\bm{x}=\alpha \bm{a}_{1} | \alpha \in \mathbb{R}\}$, 
+				$\mathbb{V}_{2}=\{\bm{x}=\alpha \bm{a}_{2} | \alpha \in \mathbb{R}\}$, 
+				$\bm{a}_{1}, \bm{a}_{2} \in \mathbb{R}^m $ and $\bm{a}_{1} \neq \bm{a}_{2} \neq \bm{0} $
+
+				\textbf{Solution:}
+
+                \textbf{Yes.}
+
+                \begin{itemize}
+                    \item $\bm{a}_1 = k \bm{a}_2$. 
+                    
+                    In this case, $\mathbb{V}_{1} \cap \mathbb{V}_{2} = \mathbb{V}_{1} = \mathbb{V}_{2}$. 
+
+                    Verify if $\mathbb{V}_{1}$ is a subspace:
+
+                    \begin{itemize}
+                        \item Additive identity: let $\alpha = 0, \bm{x} = 0 \cdot \bm{a}_1 = \bm{0} \in \mathbb{V}_1$.
+                        \item Closed under addition: let $\bm{x}_1 = \alpha_1 \bm{a}_1 \in \mathbb{V}_1, \bm{x}_2 = \alpha_2 \bm{a}_1 \in \mathbb{V}_1$. Obviously $\bm{x}_3 = \bm{x}_1 + \bm{x}_2 = (\alpha_1 + \alpha_2) \bm{a}_1 \in \mathbb{V}_1$.
+                        \item Closed under scalar multiplication: let $\bm{x}_1 = \alpha_1 \bm{a}_1 \in \mathbb{V}_1, l \in \mathbb{R}$. Obviously, $l \cdot \bm{x}_1 \in \mathbb{V}_1$.
+                    \end{itemize}
+
+                    Conclution: $\mathbb{V}_{1}$ is a subspace.
+
+                    So $\mathbb{V}_{1} \cap \mathbb{V}_{2}$ is a subspace.
+                    \item $\bm{a}_1 \neq k \bm{a}_2$.
+                    
+                    In this case, only $\bm{0} \in \mathbb{V}_{1} \cap \mathbb{V}_{2}$. Obviously, $\mathbb{V}_{1} \cap \mathbb{V}_{2}$ is a subspace.
+                \end{itemize}
+
+                Above all, $\mathbb{V}_{1} \cap \mathbb{V}_{2}$ is a subspace.
+						
+				\item %(b)小题
+				$\mathbb{V}_{1} \cup \mathbb{V}_{2}$, where $\mathbb{V}_{1}$ and $\mathbb{V}_{2}$ are the same as defined above.
+
+				\textbf{Solution:}
+
+                \textbf{If $\bm{a}_1 = k \bm{a}_2$, Yes.}
+                
+                In this case, $\mathbb{V}_{1} \cup \mathbb{V}_{2} = \mathbb{V}_{1} = \mathbb{V}_{2}$. The proof is the same as above.
+
+                \textbf{If $\bm{a}_1 \neq k \bm{a}_2$, No.}
+
+                In the case, let $\bm{x}_1 = \alpha_1 \bm{a}_1 \in \mathbb{V}_1 \subseteq  \mathbb{V}_{1} \cup \mathbb{V}_{2}, \bm{x}_2 = \alpha_2 \bm{a}_2 \in \mathbb{V}_2 \subseteq \mathbb{V}_{1} \cup \mathbb{V}_{2}, \bm{x}_3 = \bm{x}_1 + \bm{x}_2$. But $\bm{x}_3 \notin \mathbb{V}_1, \bm{x}_3 \notin \mathbb{V}_2$, so $\bm{x}_3 \notin \mathbb{V}_{1} \cup \mathbb{V}_{2}$. $\mathbb{V}_{1} \cup \mathbb{V}_{2}$ is not closed under addition, so $\mathbb{V}_{1} \cup \mathbb{V}_{2}$ is not a subspace.
+				
+				
+				\item %(c)小题
+				$\mathbb{X}\oplus\mathbb{Y}$, where $\mathbb{X},\mathbb{Y}\subseteq\mathbb{R}^m$ are subspaces and 
+				$\oplus$ denotes the direct sum, i.e., 
+				$\mathbb{X}\oplus\mathbb{Y}=\{\bm{z}=\bm{x}+\bm{y}|\bm{x}\in\mathbb{X},\bm{y}\in\mathbb{Y}\}$.
+
+				\textbf{Solution:}
+
+                \textbf{Yes.}
+
+                Verify if $\mathbb{X}\oplus\mathbb{Y}$ is a subspace:
+
+                \begin{itemize}
+                    \item Additive identity: when $\bm{x} = \bm{0}, \bm{y} = \bm{0}$, $\bm{z} = \bm{x} + \bm{y} = \bm{0} \in \mathbb{X}\oplus\mathbb{Y}$.
+                    \item Closed under addition: let $\bm{z}_1 = \bm{x}_1 + \bm{y}_1 \in \mathbb{X}\oplus\mathbb{Y}, \bm{z}_2 = \bm{x}_2 + \bm{y}_2 \in \mathbb{X}\oplus\mathbb{Y}, \bm{x}_3 = \bm{x}_1 + \bm{x}_2 \in \mathbb{X}, \bm{y}_3 = \bm{y}_1 + \bm{y}_2 \in \mathbb{Y}$, so $\bm{z} = \bm{z}_1 + \bm{z}_2 = \bm{x}_1 + \bm{x}_2 + \bm{y}_1 + \bm{y}_2 = \bm{x}_3 + \bm{y}_3 \in \mathbb{X}\oplus\mathbb{Y}$.
+                    \item Closed under scalar multiplication: let $\bm{z} = \bm{x} + \bm{y} \in \mathbb{X}\oplus\mathbb{Y}, l \in \mathbb{R}$, obviously $l\cdot\bm{x} \in \mathbb{X}, l\cdot\bm{y}\in\mathbb{Y}$, so $l\cdot\bm{z} = l\cdot\bm{x} + l\cdot\bm{y}\in \mathbb{X}\oplus\mathbb{Y}$.
+                \end{itemize}
+				
+                Conclution: $\mathbb{X}\oplus\mathbb{Y}$ is a subspace.
+				
+				\item %(d)小题
+				$\{\bm{a}\}$, where $\bm{a}\neq\bm{0}$
+
+				\textbf{Solution:}
+                
+                \textbf{No.}
+
+                $\{\bm{a}\}$ does not satisfied additive identity, so it is not a subspace.
+
+				\item %(e)小题
+				$\mathbb{S}_\perp=\{\bm{y}\in\mathbb{R}^m|\bm{y^Tx}=\bm{0}\}$, %\perp正交
+				where $\mathbb{S}\subseteq\mathbb{R}^m$is a nonempty subset.
+
+				\textbf{Solution:}
+
+                \textbf{Yes.}
+
+                Verify if $\mathbb{S}_\perp$ is a subspace:
+
+                \begin{itemize}
+                    \item Additive identity: obviously $\bm{y} = \bm{0}$ is satisfied equation $\bm{y^Tx}=\bm{0}$, so $\bm{0} \in \mathbb{S}_\perp$.
+                    \item Closed under addition: let $\bm{y}_1, \bm{y}_2 \in \mathbb{S}_\perp, \bm{y}_3 = \bm{y}_1 + \bm{y}_2$, so $\bm{y_3^Tx} = (\bm{y}_1 + \bm{y}_2)x = \bm{y_1x} + \bm{y_2x} = \bm{0}$. Therefore, $\bm{y_3} \in \mathbb{S}_\perp$.
+                    \item Closed under scalar multiplication: let $\bm{y} \in \mathbb{S}_\perp, l \in \mathbb{R}$, so $l\cdot\bm{y^T}x = \bm{0}$. Therefore, $l\cdot\bm{y} \in \mathbb{S}_\perp$.
+                \end{itemize}
+
+                Conclution: $\mathbb{S}_\perp$ is a subspace.
+
+				\item %(f)小题
+				$\mathcal{N}(\bm{A})=\{\bm{x}\in\mathbb{R}^n|\bm{Ax}=\bm{0}\}$, where $\bm{A}$ is given.
+
+				\textbf{Solution:}
+
+                \textbf{Yes.}
+
+                Verify if $\mathcal{N}$ is subspace:
+                \begin{itemize}
+                    \item Additive identity: obviously $\bm{x} = \bm{0}$ is satisfied equation $\bm{Ax}=\bm{0}$, so $\bm{0} \in \mathcal{N}$.
+                    \item Closed under addition: let $\bm{x}_1, \bm{x}_2 \in \mathcal{N}, \bm{x}_3 = \bm{x}_1 + \bm{x}_2$, so $\bm{Ax_3} = \bm{A}(\bm{x}_1 + \bm{x}_2) = \bm{0}$. Therefore, $\bm{x_3} \in \mathcal{N}$.
+                    \item Closed under scalar multiplication: let $\bm{x} \in \mathcal{N}, l \in \mathbb{R}$, so $\bm{A}(l\cdot\bm{x}) = l\cdot \bm{Ax} = \bm{0}$. Therefore, $l\cdot\bm{x} \in \mathcal{N}$.
+                \end{itemize}
+				
+                Conclution: $\mathcal{N}$ is a subspace.
+
+			\end{enumerate}
+			}
+
+		\item Given $\bm{A}\in\mathbb{R}^{m\times n}$, prove that $\mathcal{R}(\bm{A})_{\bot}=\mathcal{N}(\bm{A^T})$ %第3题
+		
+		\textbf{Proof:}
+		
+        Let $\bm{x} \in \mathcal{R}(\bm{A}), \bm{y} \in \mathcal{N}(\bm{A^T})$, we have $\bm{x^T} \bm{y} = (\bm{Az})^T\bm{y} = \bm{z^TA^Ty}$. Because $\bm{A^Ty} = \bm{0}$, $\bm{x^T} \bm{y} = \bm{0}$ for any $\bm{z}$. Therefore, $\mathcal{R}(\bm{A})_{\bot}=\mathcal{N}(\bm{A^T})$.
+
+		\item Let $\bm{M}=\{\bm{m}_1,\bm{m}_2,\cdots,\bm{m}_r\}$ and $\bm{N}=\{\bm{m}_1,\bm{m}_2,\cdots,\bm{m}_r,\bm{v}\}$ 
+		be two sets of vectors from the same vector space. 
+		Prove that span$(\bm{M})$ = span$(\bm{N})$ if and only if $\bm{v}\in$ span$(\bm{M})$.%第4题
+
+		\textbf{Proof:}
+
+        If $\bm{v}\in span(\bm{M})$, then $\exists\ l_{1},\ l_{2},\ \cdots,\ l_{r}\in\mathbb{R}$ satisfy $\bm{v}=l_{1}\bm{m}_{1}+l_{2}\bm{m}_{2}+\cdots+l_{r}\bm{m}_{r}$. And $span(\bm{N})=\{\bm{y}\mid\bm{y}=\sum\limits_{i=1}^{r}\alpha_{i}\bm{m}_{i}+\alpha_{r+1}\bm{v}\}= \{\bm{y}\mid\bm{y}=\sum\limits_{i=1}^{r}\alpha_{i}\bm{m}_{i}+\alpha_{r+1}(l_{1}\bm{m}_{1}+l_{2}\bm{m}_{2}+\cdots+l_{r}\bm{m}_{r})\}= \{\bm{y}\mid\bm{y}=\sum\limits_{i=1}^{r}\beta_{i}\bm{m}_{i},\beta_{i}=\alpha_{i}+\alpha_{r+1}l_{i}\in\mathbb{R}\}$. Obviously $span(\bm{N}) = span(\bm{M}) =\{\bm{y}\mid\bm{y}=\sum\limits_{i=1}^{r}\alpha_{i}\bm{m}_{i},\alpha_{i}\in\mathbb{R}\}$. Therefore, if $\bm{v}\in$span$ (\bm{M}) $, span$ (\bm{M})=$span$ (\bm{N})$.
+
+        If $\bm{v}\notin $ span $ (\bm{M}) $, then $\nexists\ l_{1},\ l_{2},\ \cdots,\ l_{r}\in\mathbb{R}$ satisfy $\bm{v}=l_{1}\bm{m}_{1}+l_{2}\bm{m}_{2}+\cdots+l_{r}\bm{m}_{r}$. Obviously, $\bm{v} \in span(N)$. Now, $\bm{v} \notin span(M), \bm{v} \in span(N)$. Therefore, if $\bm{v}\notin$span$(\bm{M})$, span $(\bm{M})\neq$span$(\bm{N})$.
+		
+		Above all, span $(\bm{M})=$ span $(\bm{N})$ if and only if $\bm{v}\in$ span $(\bm{M})$.
+
+		\item If 
+		$
+		\bm{A}=
+		\begin{bmatrix}
+			\bm{A}_1 \\ \bm{A}_2
+		\end{bmatrix}
+		$
+		is a square matrix such that $\mathcal{N}(\bm{A}_1)=\mathcal{R}(\bm{A}^T_2)$, prove that $\bm{A}$ must be nonsingular.%第5题
+
+		\textbf{Proof:}\\
+		Assume that $\exists\bm{x}$ satisfies $\bm{A}\bm{x}=\bm{0}$, so 
+		$\begin{bmatrix}
+            \bm{A}_{1} \\ \bm{A}_{2}
+		\end{bmatrix} \bm{x}=\bm{0}$.
+		Then $\bm{A}_{1}\bm{x}=\bm{0},\bm{A}_{2}\bm{x}=\bm{0}$.
+		$\bm{A}_{1}\bm{x}=\bm{0} $, therefore $\bm{x}\in\mathcal{N}(\bm{A}_{1})$. $\bm{A}_{2}\bm{x}=\bm{0} $, therefore $\bm{x}\in\mathcal{N}(\bm{A}_{2})$. We know that $\mathcal{N}(\bm{A}_{2}) \perp \mathcal{R}(\bm{A}_2^T)$, so $\mathcal{N}(\bm{A}_{2}) \neq \mathcal{R}(\bm{A}_2^T) = \mathcal{N}(\bm{A}_{1})$. Therefore, it is impossible that $\bm{x}\in\mathcal{N}(\bm{A}_{1})$ and $\bm{x}\in\mathcal{N}(\bm{A}_{2})$ are satisfied at the same time.
+
+		$\nexists\ \bm{x}$ satisfies $\bm{A}\bm{x}=\bm{0}\Longrightarrow $the column vectors of $\bm{A}$ are linearly independent $\Longrightarrow\\\bm{A}$ is nonsingular.
+
+		\item Given $\bm{x}\in\mathbb{R}^n$, for each of the functions below, verify whether it is a norm.%第6题
+		\begin{enumerate}%小题
+			\item $\|\bm{x}\|_2\triangleq\sqrt{|x_1|^2+|x_2|^2+\cdots+|x_{n-1}|^2+|x_n|^2}$.\\%a小题
+			\textbf{Solution:}
+
+			\textbf{No.}
+
+			\begin{itemize}
+				\item Absolute homogeneity:
+				\begin{align*} %加上*号不输出编号
+					\|\alpha\bm{x}\|_{2} 
+					&=\sqrt{\|\alpha x_{1}\|^{2}+\|\alpha x_{2}\|^{2}+\cdots+\|\alpha x_{n-1}\|^{2}+\|\alpha x_{n}\|}\\ 
+					&=|\alpha|\sqrt{\|x_{1}\|^{2}+\|x_{2}\|^{2}+\cdots+\|x_{n-1}\|^{2}+\|\alpha^{-1}x_{n}\|}
+				\end{align*}
+
+				$|\alpha|\|\bm{x}\|_{2}=|\alpha|\sqrt{\|x_{1}\|^{2}+\|x_{2}\|^{2}+\cdots+\|x_{n-1}\|^{2}+\|x_{n}\|}$.
+
+				Therefore, $\|\alpha\bm{x}\|_{2}\neq|\alpha|\|\bm{x}\|_{2}$.
+			\end{itemize}
+			Above all, $\|\bm{x}\|_{2}=\sqrt{\|x_{1}\|^{2}+\|x_{2}\|^{2}+\cdots+\|x_{n-1}\|^{2}+\|x_{n}\|}$ is not a vector norm.
+
+			\item $\|\bm{x}\|_1\triangleq|x_1|+|x_2|+\cdots+|x_{n-1}|+|x_n|$.\\%b小题
+			\textbf{Solution:}
+			\textbf{Yes.}
+			\begin{itemize}
+				\item Positivity:
+				
+				$\|\bm{x}\|_{1}$ is the sum of absolute value, it is obvious that $\|\bm{x}\|_{1}\geqslant0$, for $\forall\bm{x}\in\mathbb{R}^{n}$.
+				\item Separate points:
+				
+				Obviously, $\|\bm{x}\|_{1}=\|x_{1}\|+\|x_{2}\|+\cdots+\|x_{n}\|= 0$ is established if and only if
+				$\|x_{1}\|=\|x_{2}\|=\cdots=\|x_{n}\|=0$, 
+				$\therefore\bm{x}=\bm{0}$. $\therefore\|\bm{x}\|_{1}=0$ establishes if and only if $\bm{x}=\bm{0}$.
+				\item Triangle inequality: \
+				$\|\bm{x}+\bm{y}\|_{1} =\|x_{1}+y_{1}\|+\|x_{2}+y_{2}\|+\cdots+\|x_{n}+y_{n}\|$.\\
+				Analyze $\|x_{k}+y_{k}\|$ separately, according to the absolute value inequality, 
+				$\|x_{k}+y_{k}\|\leqslant\|x_{k}\|+\|y_{k}\|$.\\
+				$\therefore\|\bm{x}+\bm{y}\|_{1}\leqslant\|x_{1}\|+\|y_{1}\|+\|x_{2}\|+\|y_{2}\|+\cdots+\|x_{n}\|+\|y_{n}\|=\|\bm{x}\|_{1}+\|\bm{y}\|_{1}$。
+				\item Nabsolute homogeneity:\\
+				For $\forall\alpha\in\mathbb{R}$,
+				\begin{align*}
+					\|\alpha\bm{x}\|_{1}
+					&=\|\alpha x_{1}\|+\|\alpha x_{2}\|+\cdots+\|\alpha x_{n}\|\\
+					&=|\alpha|(\|x_{1}\|+\|x_{2}\|+\cdots+\|x_{n}\|)\\
+					&=|\alpha|\|\bm{x}\|_{1}
+				\end{align*}
+			\end{itemize}
+			$\therefore\|\bm{x}\|_{1}=\|x_{1}\|+\|x_{2}\|+\cdots+\|x_{n}\|$ is a vector norm.
+
+			\item $\|\bm{x}\|_\infty\triangleq\max\limits_{i=1,\cdots,n}|x_i|$.\\%c小题
+			\textbf{Solution:}\\
+			\textbf{Yes.}
+			\begin{itemize}
+				\item Positivity:\\
+				The result of $\|\bm{x}\|_{\infty}$ is a absolute value, obviously $\|\bm{x}\|_{\infty}\geqslant0$.
+				\item Separate points:\\
+				The result of $\|\bm{x}\|_{\infty}$ is the maximum value in the absolute value of $\{x_{i}\}$, 
+				$\therefore$ let $ \|\bm{x}\|_{\infty}=\max\limits_{i=1,\cdots,n}|x_{i} |=0$, 
+				and $\because|x_{i}|\geqslant  0\Longrightarrow|x_{i}|=0\Longrightarrow\bm{x}=\bm{0}$.
+				\item Triangle inequality:\\
+				From the question, $\|\bm{x}+\bm{y}\|_{\infty}=\max\limits_{i=1,\cdots,n}|x_{i}+y_{i}|$.
+				\\Assume that when $i=k$, $\|x_{i}+y_{i}\|$ can takes the maximum value, i.e.$\|\bm{x}+\bm{y}\|_{\infty}=|x_{k}+y_{k}|$.
+				Then it is known from the absolute value inequality that $\|x_{k}+y_{k}\|\leqslant\|x_{k}\|+\|y_{k}\|$.
+				And $\|\bm{x}\|_{\infty}+\|\bm{y}\|_{\infty}=|x_{k}|+|y_{k}|$ is established if and only if when
+				$\|\bm{x}\|_{\infty}=\max\limits_{i=1,\cdots,n}|x_{i}|=|x_{k}|$ and 
+				$\|\bm{y}\|_{\infty}=\max\limits_{i=1,\cdots,n}|y_{i}|=|y_{k}|$.
+				Or $\|\bm{x}\|_{\infty}+\|\bm{y}\|_{\infty}>|x_{k}|+|y_{k}|$.
+				\\$\therefore\|\bm{x}+\bm{y}\|_{\infty}=|x_{k}+y_{k}|\leqslant|x_{k}|+|y_{k}|
+				\leqslant\max\limits_{i=1,\cdots,n}\|x_{i}\|+\max\limits_{i=1,\cdots,n}\|y_{i}\|=
+				\|\bm{x}\|_{\infty}+\|\bm{y}\|_{\infty}$
+				\item Nabsolute homogeneity:\\
+				For $\forall\alpha\in\mathbb{R}$, 
+				$\|\alpha \bm{x}\|_{\infty}=\max\limits_{i=1,\cdots,n}|\alpha x_{i}|=
+				|\alpha|\max\limits_{i=1,\cdots,n}| x_{i} |=|\alpha|\|\bm{x}\|_{\infty}$
+
+			\end{itemize}
+			$\therefore \|\bm{x}\|_{\infty}=\max\limits_{i=1,\cdots,n}\|x_{i}\|$ is a vector norm.
+			
+			\item card$(\bm{x})\triangleq\sum\limits_{i=1}\limits^{n}{\bm{1}}(x_i\neq0)$, 
+			where the indicator function is defined as\\
+			$\bm{1}(x_i\neq0)=
+				\begin{cases}
+					1, & x_i\neq0.\\
+					0, & x_i=0.\\
+				\end{cases}
+			$\\%d小题
+			\textbf{Solution:}\\
+			\textbf{No.}
+			\begin{itemize}
+				\item Absolute homogeneity:\\
+				$\because$ card$(\alpha\bm{x})=\sum\limits_{i=1}\limits^{n}\bm{1}(\alpha x_{i}\neq 0)\in\{0,1\}$, \\
+				and $|\alpha|card(\bm{x})=|\alpha|\sum\limits_{i=1}\limits^{n}\bm{1}(x_{i}\neq 0)\in\{0,|\alpha|\}$, \\
+				$\therefore$ card$(\alpha \bm{x}) \neq |\alpha|card(\bm{x})$
+			\end{itemize}
+			$\therefore$ card$(\bm{x})\triangleq\sum\limits_{i=1}\limits^{n}{\bm{1}}(x_i\neq0)$ is not a vector norm.
+
+		\end{enumerate}
+
+		\item Einstein needed a new definition of length and distance in 4-dimensional space-time. 
+		Lorentz proposed this one, which Einstein accepted ($c$ = speed of light):
+		\begin{equation}
+			\bm{v}=(x,y,z,t)
+		\end{equation}
+		\begin{equation}
+			\|\bm{v}\|^2=x^2+y^2+z^2-c^2t^2
+		\end{equation}
+		Is this a true norm in $\mathbb{R}^4$?%第6题
+
+		\textbf{Solution:}\\
+		\textbf{No.}
+		\begin{itemize}
+			\item Positivity: let $x = 0, y = 0, z = 0, t \neq 0$, we have $\| \bm{v} \| = -c^2t^2 < 0$
+		\end{itemize}
+		Therefore, $\|\bm{v}\|^2=x^2+y^2+z^2-c^2t^2=0$ is not a vector norm.
+
+
+		\item Prove the Cauchy-Schwartz inequality for the complex case, i.e., 
+		for any $\bm{x,y}\in\mathbb{C}^n$,
+		$$|\bm{x}^H\bm{y}|\leq\|\bm{x}\|_2\|\bm{y}\|_2$$
+		and equality holds if and only if $\bm{x}=\alpha\bm{y}$ for some $\alpha\in\mathbb{C}$.%第7题
+
+		\textbf{Proof:}
+		
+        Let $\bm{z} = \bm{x} - \frac{\langle\bm{x},\bm{y}\rangle}{\langle\bm{y}, \bm{y}\rangle} \bm{y}$, we have $\langle z,y\rangle = 0$, so $\bm{z} \bot  \bm{y}$.
+
+        Therefore, 
+        \begin{align*}
+            \bm{x} &= \bm{z} + \frac{\langle\bm{x},\bm{y}\rangle}{\langle\bm{y}, \bm{y}\rangle} \bm{y}  \\
+            \Longrightarrow 
+            \|\bm{x}\|_2 
+            &= \|\bm{z}\|_2 + |\frac{\langle\bm{x},\bm{y}\rangle}{\langle\bm{y}, \bm{y}\rangle}| \|\bm{y}\|_2\\
+            &= \|\bm{z}\|_2 + \frac{|\bm{x^Hy}|}{\|\bm{y}\|_2}\\
+            &\geq \frac{|\bm{x^Hy}|}{\|\bm{y}\|_2} \\
+            \Longrightarrow 
+            \|\bm{x}\|_2 \|\bm{y}\|_2 &\geq |\bm{x^Hy}|
+        \end{align*}
+
+        When $\bm{x} = \alpha \bm{y}, \alpha = \frac{\langle\bm{x},\bm{y}\rangle}{\langle\bm{y}, \bm{y}\rangle}$, we have $\bm{z} = \bm{x} - \frac{\langle\bm{x},\bm{y}\rangle}{\langle\bm{y}, \bm{y}\rangle} \bm{y} = \bm{0}$ so that $\|z\|_2 = 0$. As a result, $\|\bm{x}\|_2 \|\bm{y}\|_2 = |\bm{x^Hy}|$.
+	\end{enumerate}
+\end{document}
