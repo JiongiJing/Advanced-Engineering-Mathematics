@@ -1,0 +1,9 @@
+*.log
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.pdf
+*.bak
+*.gz
+tmp*
