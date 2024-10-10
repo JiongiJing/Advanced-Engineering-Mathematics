@@ -7,3 +7,4 @@
 *.bak
 *.gz
 tmp*
+!Exercises_Chap*.pdf

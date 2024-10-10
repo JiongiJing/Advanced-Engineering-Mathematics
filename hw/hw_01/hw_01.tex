@@ -27,8 +27,8 @@
 	I have neither received assistance from another person or group, 
 	nor have I given assistance to another person.} \\
 
-	\textbf{Name}: \underline{\makebox[5em]{梁炯}} 
-	\textbf{Student ID}: \underline{\makebox[5em]{24215896}} 
+	\textbf{Name}: \underline{\makebox[5em]{xxx}} 
+	\textbf{Student ID}: \underline{\makebox[5em]{xxxxxx}} 
 	\textbf{Signature}: \underline{\makebox[5em]{}} 
 	\textbf{Date}: \underline{\today} 
 
@@ -136,14 +136,14 @@
 
                 \textbf{Yes.}
 
-                Verify if $\mathcal{N}$ is subspace:
+                Verify if $\mathcal{N}(\bm{A})$ is subspace:
                 \begin{itemize}
-                    \item Additive identity: obviously $\bm{x} = \bm{0}$ is satisfied equation $\bm{Ax}=\bm{0}$, so $\bm{0} \in \mathcal{N}$.
-                    \item Closed under addition: let $\bm{x}_1, \bm{x}_2 \in \mathcal{N}, \bm{x}_3 = \bm{x}_1 + \bm{x}_2$, so $\bm{Ax_3} = \bm{A}(\bm{x}_1 + \bm{x}_2) = \bm{0}$. Therefore, $\bm{x_3} \in \mathcal{N}$.
-                    \item Closed under scalar multiplication: let $\bm{x} \in \mathcal{N}, l \in \mathbb{R}$, so $\bm{A}(l\cdot\bm{x}) = l\cdot \bm{Ax} = \bm{0}$. Therefore, $l\cdot\bm{x} \in \mathcal{N}$.
+                    \item Additive identity: obviously $\bm{x} = \bm{0}$ is satisfied equation $\bm{Ax}=\bm{0}$, so $\bm{0} \in \mathcal{N}(\bm{A})$.
+                    \item Closed under addition: let $\bm{x}_1, \bm{x}_2 \in \mathcal{N}(\bm{A}), \bm{x}_3 = \bm{x}_1 + \bm{x}_2$, so $\bm{Ax_3} = \bm{A}(\bm{x}_1 + \bm{x}_2) = \bm{0}$. Therefore, $\bm{x_3} \in \mathcal{N}(\bm{A})$.
+                    \item Closed under scalar multiplication: let $\bm{x} \in \mathcal{N}(\bm{A}), l \in \mathbb{R}$, so $\bm{A}(l\cdot\bm{x}) = l\cdot \bm{Ax} = \bm{0}$. Therefore, $l\cdot\bm{x} \in \mathcal{N}(\bm{A})$.
                 \end{itemize}
 				
-                Conclution: $\mathcal{N}$ is a subspace.
+                Conclution: $\mathcal{N}(\bm{A})$ is a subspace.
 
 			\end{enumerate}
 			}
@@ -275,11 +275,9 @@
 			\textbf{No.}
 			\begin{itemize}
 				\item Absolute homogeneity:\\
-				$\because$ card$(\alpha\bm{x})=\sum\limits_{i=1}\limits^{n}\bm{1}(\alpha x_{i}\neq 0)\in\{0,1\}$, \\
-				and $|\alpha|card(\bm{x})=|\alpha|\sum\limits_{i=1}\limits^{n}\bm{1}(x_{i}\neq 0)\in\{0,|\alpha|\}$, \\
-				$\therefore$ card$(\alpha \bm{x}) \neq |\alpha|card(\bm{x})$
+				Because card$(\alpha\bm{x})=\sum\limits_{i=1}\limits^{n}\bm{1}(\alpha x_{i}\neq 0) $ is the number of non-zero element in $\bm{x}$, and $|\alpha|card(\bm{x})=|\alpha|\sum\limits_{i=1}\limits^{n}\bm{1}(x_{i}\neq 0)$ is $|\alpha|$ times of the number of non-zero element in $\bm{x}$, card$(\alpha \bm{x}) \neq |\alpha|card(\bm{x})$.
 			\end{itemize}
-			$\therefore$ card$(\bm{x})\triangleq\sum\limits_{i=1}\limits^{n}{\bm{1}}(x_i\neq0)$ is not a vector norm.
+			Therefore, card$(\bm{x})\triangleq\sum\limits_{i=1}\limits^{n}{\bm{1}}(x_i\neq0)$ is not a vector norm.
 
 		\end{enumerate}
 
