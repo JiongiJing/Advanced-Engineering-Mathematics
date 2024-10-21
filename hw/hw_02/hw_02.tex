@@ -1,0 +1,483 @@
+\documentclass[12pt, a4paper, UTF8]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, graphicx}
+\usepackage{geometry}
+\geometry{scale=0.85}
+
+
+\usepackage{ctex}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{geometry}
+\usepackage{amsmath}
+
+\usepackage{pifont}
+\newcommand{\whiteding}[1]{\ding{\numexpr191+#1\relax}}
+
+\begin{document}
+	
+	\begin{center} \large \textbf{Solution to Exercises-2} \end{center}
+	
+	\begin{flushleft} 
+		
+		\textbf{Course}: Matrix Analysis and Applications\\
+		
+		\textbf{Instructor}: Minghua Xia\\
+		
+		\textbf{TA}: Qiyong Chen (E-mail: chenqy263@mail2.sysu.edu.cn)\\
+		
+		\ \\
+		
+		\textit{I hereby certify that all the work in these exercises is mine alone. I have neither received assistance from another person or group, nor have I given assistance to another person.}\\
+		
+		\ \\
+		
+
+		
+		\noindent Name:\underline{\qquad\qquad\qquad} \quad Student ID:\underline{\qquad\qquad\qquad} \quad
+		Signature:\underline{\qquad\qquad\qquad} \quad Date:\underline{\qquad\qquad\qquad} \\
+		
+	\end{flushleft}
+	
+	
+	
+	\begin{enumerate}
+		%========================== 第1题 ========================%
+		%========================== 题目 ==========================%
+		\item
+		Find the eigenvalues and eigenvectors of the matrices
+		$$\bm{A}=
+			\begin{bmatrix}
+			1 & -1 \\
+			1 & 1 
+			\end{bmatrix}
+		,
+		\bm{B}=
+			\begin{bmatrix}
+			-3 & 1 & -3 \\
+			20 & 3 & 10 \\
+			2 & -2 & 4 
+			\end{bmatrix}.
+		$$
+
+		%========================== 答案 ==========================%
+		\textbf{Solution}:
+		
+		\textbf{For $\bm{A}$:}
+
+		Firstly, find the eigenvalues of $\bm{A}$:
+
+		\begin{equation*}
+			det(\bm{A}-\lambda\bm{I})=
+			\left|\begin{matrix}
+			1-\lambda & -1 \\
+			1 & 1-\lambda
+			\end{matrix}\right|=(1-\lambda)^2+1=0,
+		\end{equation*}
+
+		therefore, we have the eigenvalues of $\bm{A}$: $\lambda_1=1-i,\lambda_2=1+i$.
+
+		Let $\bm{x}$ be the eigenvector of $\bm{A}$, therefore, we have $(\bm{A}-\lambda\bm{I})\bm{x}=\bm{0}$, substitute $\lambda_1=1-i,\lambda_2=1+i$ into the equation.
+
+		\begin{equation*}
+			\begin{bmatrix}
+				-i & 1 \\
+				1 & -i
+			\end{bmatrix}\bm{x} = \bm{0} \Longrightarrow \bm{x} = k \begin{bmatrix}
+				i \\ 1
+			\end{bmatrix}, k \in \mathbb{R}.
+		\end{equation*}
+
+		\begin{equation*}
+			\begin{bmatrix}
+				i & -1 \\ 1 & i
+			\end{bmatrix}\bm{x} = \bm{0} \Longrightarrow \bm{x} = k \begin{bmatrix}
+				1 \\ i
+			\end{bmatrix}, k \in \mathbb{R}.
+		\end{equation*}
+		
+		In summary, the eigenvalues of $\bm{A}$ are $\lambda_1=1-i,\lambda_2=1+i$, and the eigenvectors of $\bm{A}$ are 
+		$ \bm{x}_{1}=\begin{bmatrix}
+			i\\
+			1
+		\end{bmatrix}$ for $\lambda_1$, and 
+		$\bm{x}_{2}=\begin{bmatrix}
+			1\\
+			i
+		\end{bmatrix}$ for $\lambda_2$.
+
+		\textbf{For $\bm{B}$:}
+
+		Firstly, find the eigenvalues of $\bm{B}$:
+
+		\begin{equation*}
+			det(\bm{B}-\lambda\bm{I})=
+			\begin{bmatrix}
+			-3-\lambda	& 1 & -3\\
+			20	&3 -\lambda & 10\\
+			2	& -2 &4-\lambda
+			\end{bmatrix}=-\lambda^{3}+4\lambda^{2}+3\lambda-18=-(\lambda+2)(\lambda-3)^{2}=0, 
+		\end{equation*}
+
+		therefore, $\lambda_{1}=-2$, $\lambda_{2}=\lambda_{3}=3$.
+
+		Let $\bm{x}$ be the eigenvector of $\bm{B}$, therefore, we have $(\bm{B}-\lambda\bm{I})\bm{x}=\bm{0}$, substitute $\lambda_{1}=-2$, $\lambda_{2}=\lambda_{3}=3$ into the equation.
+
+		\begin{equation*}
+			\begin{bmatrix}
+				-1	& 1  & -3\\
+				20	& 5  & 10\\
+				2	& -2 & 6
+			\end{bmatrix}\bm{x} = \bm{0} \Longrightarrow \begin{bmatrix}
+				1 & 0 & 1\\
+				0 & 1 & -2\\
+				0 & 0 & 0
+			\end{bmatrix}\bm{x} = \bm{0} \Longrightarrow \bm{x} = k \begin{bmatrix}
+				-1 \\ 2 \\ 1
+			\end{bmatrix}, k \in \mathbb{R}.
+		\end{equation*}
+
+		\begin{equation*}
+			\begin{bmatrix}
+				-6	& 1  & -3\\
+				20	& 0  & 10\\
+				2	& -2 & 1
+			\end{bmatrix}\bm{x} = \bm{0} \Longrightarrow \begin{bmatrix}
+				1 & 0 & \frac{1}{2}\\
+				0 & 1 & 0\\
+				0 & 0 & 0
+			\end{bmatrix}\bm{x} = \bm{0} \Longrightarrow \bm{x} = k \begin{bmatrix}
+				-\frac{1}{2} \\ 0 \\ 1
+			\end{bmatrix}, k \in \mathbb{R}.
+		\end{equation*}
+
+		In summary, the eigenvalues of $\bm{B}$ are $\lambda_{1}=-2$, $\lambda_{2}=\lambda_{3}=3$, and the eigenvectors of $\bm{B}$ are 
+		$ \bm{x} = \begin{bmatrix}
+			-1 \\ 2 \\ 1
+		\end{bmatrix}$ for $\lambda_1$, and 
+		$\bm{x} = \begin{bmatrix}
+			-\frac{1}{2} \\ 0 \\ 1
+		\end{bmatrix}$ for $\lambda_2$ and $\lambda_3$.
+
+		%========================== 第2题 ========================%
+		%========================== 题目 ==========================%
+		\item
+		Determine if either of the following matrices is diagonalizable
+		$$\bm{A}=
+			\begin{bmatrix}
+			-1 & -1 & -2 \\
+			8 & -11 & -8 \\
+			-10 & 11 & 7 
+			\end{bmatrix}
+		,
+		\bm{B}=
+			\begin{bmatrix}
+			1 & -4 & -4 \\
+			8 & -11 & -8 \\
+			-8 & 8 & 5 
+			\end{bmatrix}.
+		$$
+
+		%========================== 答案 ==========================%
+		\textbf{Solution:}
+		
+		\textbf{For $\bm{A}$}:
+		\begin{equation*}
+			det(\bm{A}-\lambda \bm{I})= 
+			\left|\begin{matrix} 
+				-1-\lambda & -1 & -2 \\ 
+				8 & -11-\lambda  & -8 \\ 
+				-10 & 11 & 7-\lambda 
+			\end{matrix} \right| =-\lambda^3-5\lambda^2-3\lambda+9=-(\lambda +3)^2(\lambda -1)=0
+		\end{equation*}.
+
+		Therefore, the eigenvalues of $\bm{A}$ are $\lambda_1=\lambda_2=-3, \lambda_3=1$.
+
+		For $\lambda_1=\lambda_2=-3$, we can easily calculate to get $rank(\bm{A}-\lambda_1\bm{I})$ = 2. Therefore, $geo \; mult_{\bm{A}}(\lambda_1) = \mathcal{N}(\bm{A}-\lambda_1\bm{I}) = 3 - rank(\bm{A}-\lambda_1\bm{I}) = 1 \neq 2 = alg \; mult_{\bm{A}}(\lambda_1)$, $\lambda_1=\lambda_2=-3$ are not semisimple.
+
+		Because $\lambda_1=\lambda_2=-3$ are not semisimple, $\bm{A}$ is not diagonalizable.
+
+		\textbf{For $\bm{B}$}:
+		\begin{equation*}
+			det(\bm{B}-\lambda \bm{I})= 
+			\left| \begin{matrix} 
+				1-\lambda & -4 & -4 \\ 
+				8 & -11-\lambda & -8 \\ 
+				-8 & 8 & 5-\lambda 
+			\end{matrix} \right|=-\lambda^3-5\lambda^2-3\lambda+9=-(\lambda+3)^2(\lambda-1)=0
+		\end{equation*}.
+
+		Therefore, the eigenvalues of $\bm{B}$ are $\lambda_1=\lambda_2=-3, \lambda_3=1$.
+
+		For $\lambda_1=\lambda_2=-3$, we can easily calculate to get $rank(\bm{B}-\lambda_1\bm{I})$ = 1. Therefore, $geo \; mult_{\bm{B}}(\lambda_1) = \mathcal{N}(\bm{B}-\lambda_1\bm{I}) = 3 - rank(\bm{B}-\lambda_1\bm{I}) = 2 = alg \; mult_{\bm{A}}(\lambda_1)$. So $\lambda_1=\lambda_2=-3$ are semisimple.
+
+		In the same way, we can know that $\lambda_3=1$ is also semisimple.
+
+		In summary, $\lambda_1=\lambda_2=-3, \lambda_3=1$ are semisimple, so $\bm{B}$ is diagonalizable.
+
+		%========================== 第3题 ========================%
+		%========================== 题目 ==========================%
+		\item
+		Estimate the eigenvalues of 
+		$\bm{A}=
+			\begin{bmatrix}
+			5 & 1 & 1\\
+			0 & 6 & 1\\
+			1 & 0 & -5  
+			\end{bmatrix}.
+		$
+
+		%========================== 答案 ==========================%
+		\textbf{Solution}:
+
+		We can use Gerschgorin circles to estimate the eigenvalues. 
+		
+		Firstly we use row vectors of $\bm{A}$, then we get three circles: $C_{1}(5,2),C_{2}(6,1),C_{3}(-5,1)$. 
+		
+		In the same way, we use column vectors of $\bm{A}$ and get three circles: $C_{1}(5,1),C_{2}(6,1),C_{3}(-5,2)$.
+
+		We need to choose circles which have shorter radius to estimate eigenvalues. In the reason, the ciecles used to estimate eigenvalues are : $C_{1}(5,1),C_{2}(6,1),C_{3}(-5,1)$.
+
+		%========================== 第4题 ========================%
+		%========================== 题目 ==========================%
+		\item
+		Determine the induced norm $\|\bm{A}\|_{2}$ as well as $\|\bm{A}^{-1}\|_{2}$ for the nonsingular matrix
+		$$
+		\bm{A}=\frac{1}{\sqrt{3}}
+			\begin{bmatrix}
+			3 & -1\\
+			0 & \sqrt{8}
+			\end{bmatrix}.
+		$$
+
+		%========================== 答案 ==========================%
+
+		\textbf{Solution}:
+
+		We know that $||\bm{A}||_2 = \sqrt{\lambda_{max} (\bm{A}^H \bm{A})}$
+
+		For $||\bm{A}||_2$, 
+		\begin{equation*}
+			\bm{A}^H\bm{A}=\frac{1}{\sqrt{3}}
+			\begin{bmatrix}
+				3 & 0\\ 
+				-1 & \sqrt{8} 
+			\end{bmatrix} \frac{1}{\sqrt{3}}
+			\begin{bmatrix} 
+				3 & -1\\ 
+				0&\sqrt{8} 
+			\end{bmatrix}=
+			\begin{bmatrix}
+				3&-1\\ 
+				-1&3 
+			\end{bmatrix}.
+		\end{equation*}
+
+		Therefore,
+		\begin{equation*}
+			det(\bm{A}^H\bm{A}-\lambda\bm{I})= 
+			\left|\begin{matrix}
+				3-\lambda & -1 \\ 
+				-1 & 3-\lambda 
+			\end{matrix} \right|
+			=\lambda ^2 -6 \lambda  +8=(\lambda -4)(\lambda -2)=0.
+		\end{equation*}
+
+		$\lambda =2, 4$, so $||\bm{A}||_2 = \sqrt{\lambda_{max}(\bm{A}^H \bm{A})}=\sqrt{4}=2$.
+
+		Before calculating $||\bm{A}^{-1}||_2$, we try to proof $\bm{A}^H \bm{A}$ and $\bm{A} \bm{A}^H$ have same eigenvalues.
+
+		Ler $\lambda$ be the eigenvalue of $\bm{A}^H\bm{A}$, and $\mathbf{x}$ is the corresponding eigenvector, then
+		\begin{equation*}
+			\bm{A}^H \bm{A} \bm{x} = \lambda \bm{x}.
+		\end{equation*}
+
+		Let $\bm{y} = \bm{A}\bm{x}$, then
+		\begin{equation*}
+			\bm{A}\bm{A}^H\bm{y} = \bm{A}\bm{A}^H\bm{y}\bm{A}\bm{x} = \bm{A}\lambda \bm{x} = \lambda\bm{y},
+		\end{equation*}
+		therefore, $\lambda$ is also the eigenvalue of $\bm{A}\bm{A}^H$ and $\bm{y}$ is the corresponding eigenvector.
+
+		Above all, we know that $\bm{A}^H \bm{A}$ and $\bm{A} \bm{A}^H$ have same eigenvalues. When the eigenvalues of $\bm{A}^H \bm{A}$ are $\lambda =2, 4$, the eigenvalues of $\bm{A}\bm{A}^H$ are also $\lambda =2, 4$. Furthermore, the eigenvalues of $(\bm{A}\bm{A}^H)^{-1}$ are $\lambda^{-1} =\frac{1}{2}, \frac{1}{4}$.
+
+		For $||\bm{A}^{-1}||_2$, 
+		\begin{align*}
+			||\bm{A}^{-1}||_2 &= \sqrt{\lambda_{max}((\bm{A}^{-1})^{H}\bm{A}^{-1})} \\
+			&= \sqrt{\lambda_{max}((\bm{A}^{H})^{-1}\bm{A}^{-1})} \\
+			&= \sqrt{\lambda_{max}((\bm{A}^{H}\bm{A})^{-1})} \\
+			&= \sqrt{\frac{1}{2}} \\
+			&=\frac{\sqrt{2}}{2}
+		\end{align*}
+		
+		%========================== 第5题 ========================%
+		%========================== 题目 ==========================%
+		\item
+		Let $\bm{A}\in\mathbb{C}^{m\times n}$. Please prove the following statements.
+		\begin{enumerate}
+			\item $\| \bm{A}\|_{p}=\max\limits_{\| \bm{x}\|_{p}=1}\| \bm{Ax}\|_{p}$ is a norm for any $p\geq 1$;
+			\item $\| \bm{Ax}\|_{p}\leq\| \bm{A}\|_{p}\| \bm{x}\|_{p}$ holds for any $p\geq 1$;
+			\item $\| \bm{AB}\|_{p}\leq\| \bm{A}\|_{p}\| \bm{B}\|_{p}$ holds for any $p\geq 1$;
+			\item $\| \bm{QAU}\|_{F}=\| \bm{A}\|_{F}$ holds for any unitary matrices $\bm{Q}\in \mathbb{C}^{m\times m}$ and $\bm{U}\in \mathbb{C}^{n\times n}$;
+			\item $\| \bm{QAU}\|_{2}=\| \bm{A}\|_{2}$ holds for any unitary matrices $\bm{Q}\in \mathbb{C}^{m\times m}$ and $\bm{U}\in \mathbb{C}^{n\times n}.$
+		\end{enumerate}
+
+		%========================== 答案 ==========================%
+		%========================== (a) ==========================%
+		\textbf{(a)Proof}:
+		
+		\text{1.Non-negetivity}:
+
+		Obviously: $||\bm{Ax}||_p \geq 0$ for any $p \geq 1$, therefore, $\|\bm{A}\|_{p}=\max\limits_{\|\bm{x}\|_{p}=1}\|\bm{Ax}\|_{p} \geq 0$ for any $p\geq 1$.
+		
+		\text{2.Separate points}:
+
+		Let $\| \bm{A}\|_{p}=\max\limits_{\| \bm{x}\|_{p}=1}\| \bm{Ax}\|_{p} = 0$, now we have $||\bm{Ax}||_p=0$ for any $\bm{x} \in \mathbb{R}, ||\bm{x}||_p=1$. Therefore, only $\bm{A} = \bm{0}$ meets the condition. 
+		
+		
+		\text{3.Triangle inequality}:
+
+		\begin{align*}
+			||\bm{A}||_p+||\bm{B}||_p &=\max \limits_{\| \bm{x}\|_{p}=1}\| \bm{Ax}\|_{p}+\max \limits_{\| \bm{x}\|_{p}=1}\| \bm{Bx}\|_{p} \\
+			&\geq\max\limits_{\|\bm{x}\|_{p}=1}(\|\bm{Ax}\|_{p}+\|\bm{Bx}\|_{p}) \\ 
+			&\geq\max\limits_{\|\bm{x}\|_{p}=1}(\|\bm{Ax} + \bm{Bx}\|_{p}) \\
+			&\geq \max\limits_{\| \bm{x}\|_{p}=1}(\| (\bm{A}+\bm{B})\bm{x}\|_{p})=||\bm{A}+\bm{B}||_p
+		\end{align*}
+		
+		Therefore, we can proof that  $\displaystyle \| \bm{A}\|_{p}=\max_{\| \bm{x}\|_{p}=1}\| \bm{Ax}\|_{p}$ is a norm for any $p\geq 1$.
+		
+		
+		\text{4.Absolute homogeneity}:
+
+		$||\alpha\bm{A}||=\max\limits_{\|\bm{x}\|_{p}=1}\|\alpha\bm{Ax}\|_{p}=|\alpha|\max\limits_{\|\bm{x}\|_{p}=1}\|\bm{Ax}\|_{p}=|\alpha|||\bm{A}||_p$
+
+		%========================== (b) ==========================%
+		\textbf{(b)Proof}:
+
+		We know that $||\bm{A}||_p\triangleq\mathop{sup}\limits_{\bm{x} \neq 0}\frac{||\bm{Ax}||_p}{||\bm{x}||_p} \geq\frac{||\bm{Ax}||_p}{||\bm{x}||_p}$, for $\bm{x}\neq\bm{0}$.
+
+		Therefore, $||\bm{Ax}||_p \leq ||\bm{A}||_p ||\bm{x}||_p$ for any $p \geq 1$.
+		
+		%========================== (c) ==========================%
+		\textbf{(c)Proof}:
+		\begin{align*}
+			||\bm{AB}||_p &= \mathop {max} \limits_{\|\bm{x}\|_p = 1} ||\bm{ABx}||_p \\
+			&= \mathop {max} \limits_{\|\bm{x}\|_p = 1} ||\bm{A(Bx)}||_p \\
+			&\leqslant \mathop {max} \limits_{\|\bm{x}\|_p = 1} ||\bm{A}||_p||\bm{Bx}||_p \\
+			&=||\bm{A}||_p||\bm{B}||_p
+		\end{align*}
+		
+		Therefore, $\|\bm{AB}\|_{p}\leq\|\bm{A}\|_{p}\|\bm{B}\|_{p}$ holds for any $p\geq 1$.
+
+		%========================== (d) ==========================%
+		\textbf{(d)Proof}:
+		We know $\|\bm{A}\|_{F}^{2}={tr}(\bm{A}^{H}\bm{A})^{\frac{1}{2}}$, then 
+		\begin{align*}
+			\|\bm{Q}\bm{A}\bm{U}\|_{F}^{2}&={tr}(\bm{U}^{H}\bm{A}^{H}\bm{Q}^{H}\bm{Q}\bm{A}\bm{U})^{\frac{1}{2}} \\
+			&={tr}(\bm{U}^{H}\bm{A}^{H}\bm{A}\bm{U})^{\frac{1}{2}} \\
+			&={tr}(\bm{A}^{H}\bm{A})^{\frac{1}{2}} \\
+			&=\|\bm{A}\|_{F}^{2}
+		\end{align*}.
+
+		%========================== (e) ==========================%
+		\textbf{(e)Proof}:
+		
+		We know that: $||\bm{QAU}||_2=\sqrt{\lambda_{max}((\bm{QAU})^H(\bm{QAU}))}$, and $||\bm{A}||_2 =\sqrt{\lambda_{max}(\bm{A}^H\bm{A})}$. And $(\bm{QAU})^H(\bm{QAU}) = \bm{U}^H\bm{A}^H\bm{Q}^H\bm{QAU} = \bm{U}^H \bm{A}^H\bm{A}\bm{U}$ is similar to $\bm{A}^H\bm{A}$. 
+		
+		Therefore, $(\bm{QAU})^H(\bm{QAU})$ has the same eigenvalues with $\bm{A}^H\bm{A}$. 
+		
+		In the reason, $\lambda_{max}((\bm{QAU})^H(\bm{QAU}))=\lambda_{max}(\bm{A}^H\bm{A})$.
+
+		Above all, $\|\bm{QAU}\|_{2}=\|\bm{A}\|_{2}$ holds for any unitary matrices $\bm{Q}\in \mathbb{C}^{m\times m}$ and $\bm{U}\in \mathbb{C}^{n\times n}.$
+
+		%========================== 第6题 ========================%
+		%========================== 题目 ==========================%
+		\item
+		Using the induced matrix norm, prove that if $A$ is nonsingular, then
+		$$\min_{||\bm{x}\|=1}\|\bm{Ax}\|=\frac{1}{\|\bm{A}^{-1}\|}.$$
+
+		%========================== 答案 ==========================%
+		\textbf{Proof}:
+		
+		\begin{align*}
+			||\bm{A}^{-1}||&=\mathop{sup}\limits_{\bm{x}\neq\bm{0}}\frac{||\bm{A}^{-1}\bm{x}||}{||\bm{x}||} \\
+			&=\mathop{sup}\limits_{\bm{y}\neq\bm{0}}\frac{||\bm{y}||}{||\bm{Ay}||}, \bm{y}=\bm{A}^{-1}\bm{x} \\
+			&=\mathop{sup}\limits_{\bm{y}\neq\bm{0}}\frac{1}{\frac{1}{||y||}||\bm{Ay}||} \\
+			&=\mathop{sup}\limits_{\bm{y}\neq\bm{0}}\frac{1}{||\bm{A}\frac{\bm{y}}{||\bm{y}||}||} \\
+			&=\mathop{max}\limits_{||\bm{z}||= 1}\frac{1}{||\bm{Az}||}, \bm{z}=\frac{\bm{y}}{||\bm{y}||}\\
+			&=\frac{1}{\mathop {min}\limits_{||\bm{z}||=1}||\bm{Az}||}
+		\end{align*}
+
+		Therefore, $\mathop{min}\limits_{||\bm{x}\|=1}\|\bm{Ax}\|=\frac{1}{\|\bm{A}^{-1}\|}.$
+		
+		%========================== 第7题 ========================%
+		%========================== 题目 ==========================%
+		\item
+		Let $\bm{A}\in\mathbb{C}^{m\times n}$ is a Vandemonde matrix with distinct roots. 
+		Please verify that any collection of $r$ columns of $\bm{A}$, with $r\leq m$, is linearly independent.
+		\\\textbf{Proof}:
+		We know that: $\bm{A}= 
+		\left[\begin{matrix} 
+			1 & 1 & \dots & 1 \\ 
+			a_1 & a_2 & \cdots & a_n \\ 
+			\vdots & \vdots & \ddots & \vdots \\ 
+			a_1^{m-1} & a_2^{m-1} & \cdots & a_n^{m-1}
+		\end{matrix} \right]$
+
+		%========================== 答案 ==========================%
+		When $m \leq n$, any collection of $m$ columns of $\bm{A}$ can form a square matrix $\bm{A}_1$, and $\bm{A}_1$ is still a Vandemonde matrix.
+		
+		$\mathop{det}(\bm{A}_1)=\prod\limits_{1\leq i\leq j\leq m}(a_j-a_i) \neq 0, \quad (a_j \neq a_i)  \Longrightarrow \mathop{rank}(\bm{A}_1)=m$
+		
+		Therefore, any collection of $r$ columns of $\bm{A}$, with $r\leq m$, is linearly independent.
+		
+		When $m < n$, any collection of $n$ rows of $\bm{A}$ can form a square matrix $\bm{A}_2$, and $\bm{A}_2$ is still a Vandemonde matrix.
+
+		$\mathop{det}(\bm{A}_2)=\prod\limits_{1\leq i\leq j\leq n}(a_j-a_i)\neq 0, \quad (a_j\neq a_i) \Longrightarrow \mathop{rank}(\bm{A}_1)=n$
+		
+		Therefore, any collection of $r$ columns of $\bm{A}$ with $r\leq n < m$ is linearly independent.
+
+		%========================== 第8题 ========================%
+		%========================== 题目 ==========================%
+		\item%第8题
+		Suppose $\bm{A}$ has eigenvalues $0,3,5$ with independent eigenvectors $\bm{u}, \bm{v}, \bm{w}$.
+		\begin{enumerate}
+			\item Give a basis for the nullspace and a basis for the column space;
+			\item Find a particular solution to $\bm{Ax}=\bm{v}+\bm{w}$;
+			\item Find all solutions to $\bm{Ax}=\bm{v}+\bm{w}$;
+			\item $\bm{Ax}=\bm{u}$ has no solution. If it did then \underline{\makebox[3em]{}} would be in the column space.
+		\end{enumerate}
+
+		%========================== 答案 ==========================%
+		\textbf{Solution}:
+
+		\textbf{(a)}
+		$\bm{A}$ has two non-zero eigenvalues, so $rank(\bm{A}) = 2$. Furthermore, $rank(\mathcal{N}(\bm{A})) = 3 - rank(\bm{A}) = 1, rank(\mathcal{C}(\bm{A})) = rank(\bm{A}) = 2$. $\bm{u}$ is the eigenvector of $\bm{A}$ corresponding $\lambda = 0$, therefore, $\bm{A} \bm{u} = \bm{0}$, $\bm{u}$ is a basis for the nullspace.
+		
+		Obviously, $\bm{v}$ and $\bm{w}$ give a basis for the column space.
+
+		\textbf{(b)}
+		We have 
+		\begin{equation*}
+			\bm{A}\bm{v} = 3\bm{v} \Longrightarrow \bm{v} = \frac{1}{3}\bm{A}\bm{v},
+		\end{equation*}
+		\begin{equation*}
+			\bm{A}\bm{w} = 5\bm{w} \Longrightarrow \bm{u} = \frac{1}{5}\bm{A}\bm{u}.
+		\end{equation*}
+		Therefore,
+		\begin{equation*}
+			\bm{A}(\frac{1}{3}\bm{v}+\frac{1}{5}\bm{w}) = \bm{v} + \bm{w}
+		\end{equation*}
+		Above all, $\frac{1}{3}\bm{v}+\frac{1}{5}\bm{w}$ is a particular solution to $\bm{Ax}=\bm{v}+\bm{w}$.
+
+		\textbf{(c)}
+		Because $\bm{A} k \bm{u} = \bm{0}, k \in \mathbb{R}$, then $\bm{A}(\frac{1}{3}\bm{v}+\frac{1}{5}\bm{w}+k\bm{u}) = \bm{v} + \bm{w}, k \in \mathbb{R}$.
+		Therefore, $\frac{1}{3}\bm{v}+\frac{1}{5}\bm{w}+k\bm{u}, k \in \mathbb{R}$ are all solutions to $\bm{Ax}=\bm{v}+\bm{w}$.
+		
+		\textbf{(d)}
+		$\bm{Ax}=\bm{u}$ has no solution. If it did then $\bm{u}$ would be in the column space. $\bm{A}$ will have three demension contrary to the meaning of the question.
+		
+	\end{enumerate}
+	
+	
+	
+	
+\end{document}
