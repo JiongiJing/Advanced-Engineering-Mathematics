@@ -8,3 +8,4 @@
 *.gz
 tmp*
 !Exercises_Chap*.pdf
+extern/
